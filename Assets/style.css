@@ -1,0 +1,18 @@
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+
+#headerH2 {
+  text-align: center;
+  background-image: linear-gradient(
+    to right,
+    rgb(37, 37, 135),
+    rgb(162, 0, 255)
+  );
+  padding: 15px;
+  height: 80px;
+  width: 100%;
+  color: white;
+}
