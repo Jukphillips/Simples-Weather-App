@@ -18,12 +18,14 @@
   color: white;
 }
 
-/* Search column stuff */
+main {
+  display: flex;
+}
 
 /* Search Basic Formtating */
 .searchFormat {
   margin: 5px;
-  width: 55%;
+  width: 48%;
 }
 
 /* Parent */
@@ -47,8 +49,14 @@
   border-radius: 12.5px;
 }
 
+/* Clear Button */
+#clearButton {
+  display: none;
+}
+
 /* Search Button */
-#searchButton {
+#searchButton,
+#clearButton {
   background-color: lightskyblue;
   color: white;
   border: none;
@@ -61,4 +69,13 @@
 hr {
   height: 5px;
   background-color: darkgrey;
+}
+
+#recentSearchesDisplay {
+  background-color: lightgrey;
+  color: white;
+  border: none;
+  padding: 10px;
+  margin-bottom: 11px;
+  border-radius: 5.5px;
 }
