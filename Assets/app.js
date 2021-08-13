@@ -2,6 +2,8 @@
 var searchBtn = document.getElementById('searchButton')
 //Declaring clear button
 var clearBtn = document.getElementById('clearButton')
+// Declaring search results container
+var searchResultCon = document.getElementById('searchResults')
 
 
 // declaring input var
@@ -24,6 +26,7 @@ function search(event) {
    
     
     clearBtn.style.display = 'block';
+    searchResultCon.style.display = 'block';
 
     var storedCitiesList = JSON.parse(localStorage.getItem('citiesList'))
 
@@ -33,7 +36,9 @@ function search(event) {
 
     citiesList.push({UserCity: userInput })
    localStorage.setItem('CitiesList', JSON.stringify(citiesList));
-    displayRecentSearches();
+   console.log(citiesList)
+    
+   displayRecentSearches();
    
    }
   

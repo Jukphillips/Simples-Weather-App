@@ -16,7 +16,7 @@
 
         <!-- Search Bar & Locally Saved Buttons-->
     <main>   
-        <aside id="searchBar" class="searchFormat">    
+        <aside id="searchBar">    
             <h1 id='searchH1' class="searchFormat"><strong>Search for a City:</strong></h1>
             <input id="searchInput" class="searchFormat" placeholder="Denver">
             <button id="searchButton" class="searchFormat">  Search </button>
@@ -24,13 +24,58 @@
 
             <div  class="SearchFormat">
                 <div id="recentSearches">
-            
+                  
                 </div>
                 <button id="clearButton" class="searchFormat">Clear All</button>
             </div>
         </aside>    
-        <section>
+        <section id="searchResults">
+            <div id="currentDayResults">
+                <h1 class="resultText" id="resultCityName">Placeholder</h1>
+                <p class="resultText" id="resultCityTemp">Temp: </p>
+                <p class="resultText" id="resultCityWind">Wind: </p>
+                <p class="resultText" id="resultCityHumidity">Humidity: </p>
+                <p class="resultText" id="resultCityUV">UV Index: </p>
+            </div>
 
+            <h2>5-Day Forecast:</h2>
+            <div id="weekForecast">
+                <div class="forecastCards" id="nextDayForecast">
+                    <h4 class="forecastCardsText" id="nextDayDate">Next Day</h4>
+                    <p class="forecastCardsText"  id="nextDayEmoji"> emoji</p>
+                    <p class="forecastCardsText" id="nextDayTemp"> Temp: </p>
+                    <p class="forecastCardsText" id="nextDayWind">Wind:</p>
+                    <p class="forecastCardsText" id="nextDayHumidity">Humdity:</p>    
+                </div> 
+                <div class="forecastCards" id="nextDayForecast">
+                    <h4 class="forecastCardsText" id="nextDayDate">Next Day</h4>
+                    <p class="forecastCardsText" id="nextDayEmoji"> emoji</p>
+                    <p class="forecastCardsText" id="nextDayTemp"> Temp: </p>
+                    <p class="forecastCardsText" id="nextDayWind">Wind:</p>
+                    <p class="forecastCardsText" id="nextDayHumidity">Humdity:</p>
+                </div>
+                <div class="forecastCards" id="nextDayForecast">
+                    <h4 class="forecastCardsText" id="nextDayDate">Next Day</h4>
+                    <p class="forecastCardsText"  id="nextDayEmoji"> emoji</p>
+                    <p class="forecastCardsText" id="nextDayTemp"> Temp: </p>
+                    <p class="forecastCardsText" id="nextDayWind">Wind:</p>
+                    <p class="forecastCardsText" id="nextDayHumidity">Humdity:</p>
+                </div>
+                <div class="forecastCards" id="nextDayForecast">
+                    <h4 class="forecastCardsText" id="nextDayDate">Next Day</h4>
+                    <p class="forecastCardsText" id="nextDayEmoji"> emoji</p>
+                    <p class="forecastCardsText" id="nextDayTemp"> Temp: </p>
+                    <p class="forecastCardsText"  id="nextDayWind">Wind:</p>
+                    <p class="forecastCardsText" id="nextDayHumidity">Humdity:</p>
+                </div>
+                <div class="forecastCards" id="nextDayForecast">
+                    <h4 class="forecastCardsText" id="nextDayDate">Next Day</h4>
+                    <p class="forecastCardsText" id="nextDayEmoji"> emoji</p>
+                    <p class="forecastCardsText" id="nextDayTemp"> Temp: </p>
+                    <p class="forecastCardsText" id="nextDayWind">Wind:</p>
+                    <p class="forecastCardsText" id="nextDayHumidity">Humdity:</p>
+                </div>
+            </div>    
 
        
         </section>
