@@ -109,3 +109,44 @@ hr {
 .forecastCardsText {
   margin: 15px;
 }
+
+/* Uv Green */
+.greenUV {
+  background-color: green;
+  padding: 5px;
+  width: 45px;
+  display: inline-block;
+  border-radius: 5px;
+}
+
+.yellowUV {
+  background-color: yellow;
+  padding: 5px;
+  width: 45px;
+  display: inline-block;
+  border-radius: 5px;
+}
+
+.redUV {
+  background-color: red;
+  padding: 5px;
+  width: 45px;
+  display: inline-block;
+  border-radius: 5px;
+}
+
+.purpleUV {
+  background-color: purple;
+  padding: 5px;
+  width: 45px;
+  display: inline-block;
+  border-radius: 5px;
+}
+
+.orangeUV {
+  background-color: orange;
+  padding: 5px;
+  width: 45px;
+  display: inline-block;
+  border-radius: 5px;
+}
