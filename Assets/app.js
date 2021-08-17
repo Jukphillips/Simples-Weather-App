@@ -12,6 +12,8 @@ var resultCityTemp = document.getElementById('resultCityTemp')
 var resultCityWind = document.getElementById('resultCityWind')
 // Declaring result city Humidity in today's forecast
 var resultCityUV = document.getElementById('resultCityUV')
+// Declaring forecast div
+var forecastWeekDiv = document.getElementById('weekForecast')
 
 
 
@@ -59,7 +61,7 @@ function search(event) {
     
    displayRecentSearches();
     getCurrentWeatherInfo();
-    getFivedayForecast();
+    
    
    }
   
@@ -88,7 +90,9 @@ function displayRecentSearches() {
         })
         .then(function (data){
         
-        resultCityName.textContent = mostRecentSearch + " " + currentTime + " " 
+            
+
+        resultCityName.textContent = mostRecentSearch + " " + currentTime 
         resultCityTemp.textContent = "Temp: " + data.main.temp + "°F"
         resultCityWind.textContent = "Wind: " + data.wind.speed + " MPH"
         resultCityHumidity.textContent = "Humidity: " + data.main.humidity + "%"
@@ -134,19 +138,58 @@ function displayRecentSearches() {
         .then(function (responseForecast) {
             return responseForecast.json();
         }) .then( function (dataresponse) { 
-           
-            
-            
+            var i = 8
+     for ( var m=0; m < 5; m++ ) {
+    
+         console.log(dataresponse.list)
+        var currentFiveDate = dataresponse.list[i].dt
+        console.log({currentFiveDate})
+        if (dataresponse.list[i].dt != dataresponse.list[i+1].dt) {
+            var numberDayForecast = document.createElement('div')
+            numberDayForecast.setAttribute('class', 'forecastCards')
+
+            var forecastDate = moment.unix(currentFiveDate).format("(MMMM/Do/YYYY)")
+            var forecastDateText = document.createElement('h4')
+            forecastDateText.textContent = forecastDate
+            forecastDateText.setAttribute = ('class', 'forecastCardsText')
+
+            var fiveForecastEmoji = document.createElement('img')
+            fiveForecastEmoji.setAttribute('src', 'https://openweathermap.org/img/wn/' + dataresponse.list[i].weather[0].icon + "@2x.png")
+
+            var forecastTemp = document.createElement('p')
+            forecastTemp.textContent = "Temp: " + dataresponse.list[i].main.temp + "°F"
+            forecastTemp.setAttribute('class', 'forecastCardsText')
+
+            var forecastWind = document.createElement('p')
+            forecastWind.textContent = "Wind: " + dataresponse.list[i].wind.speed + " MPH"
+            forecastWind.setAttribute('class', 'forecastCardsText')
+
+            var forecastHumidity = document.createElement('p')
+            forecastHumidity.textContent = "Humidty: " + dataresponse.list[i].main.humidity + "%"
+            forecastHumidity.setAttribute('class', 'forecastCardsText')
+
+            numberDayForecast.append(forecastDateText);
+            numberDayForecast.append(fiveForecastEmoji);
+            numberDayForecast.append(forecastTemp);
+            numberDayForecast.append(forecastWind);
+            numberDayForecast.append(forecastHumidity);
+            forecastWeekDiv.append(numberDayForecast);
+
+            i = i + 7
         
-        
-            for(var i = 0; i > dataresponse.list[0].length; i += 8 ) {
 
         }
 
 
 
-        } )
- }
+
+
+     }
+
+
+
+           
+ })}
 
 function clearSearch() {
     clearBtn.style.display = 'none';
